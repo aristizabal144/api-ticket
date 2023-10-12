@@ -1,4 +1,5 @@
 # API TICKETS 🎟️🥳
+URL publica: ec2-54-89-89-89.compute-1.amazonaws.com
 
 # Requerimientos 🔌
 
@@ -39,5 +40,76 @@ Para correr los test unitarios ubicate en la raiz del proyecto y ejecuta:
     
         vendor/bin/phpunit
 
+# Documentacion 📝
 
+### 1. Listar Tickets
 
+**URL:** `/tickets`
+
+**Método HTTP:** GET
+
+**Descripción:** Este endpoint se utiliza para listar los tickets disponibles. Puedes usar el parámetro `size` para especificar la cantidad de tickets a mostrar por página.
+
+**Parámetros:**
+
+- `size`: Número de tickets por página.
+- `page`: Número de página.
+
+### 2. Mostrar Ticket
+**URL:** `/tickets/{id}` 
+
+**Método HTTP:** GET
+
+**Descripción:** Este endpoint se utiliza para obtener detalles de un ticket específico mediante su ID.
+
+**Parámetros:**
+
+- `id`: ID del ticket que se desea obtener.
+
+### 3. Crear Ticket
+
+**URL:** `/tickets`
+
+**Método HTTP:** POST
+
+**Descripción:**  Este endpoint se utiliza para crear un nuevo ticket.
+
+Datos del cuerpo:
+    ```json
+    
+    {
+        "usuario": string,
+        "estatus": string [abierto, cerrado]
+    }
+
+### 4. Editar un Ticket
+
+**URL:** `/tickets/{id}`
+
+**Método HTTP:** PUT
+
+**Descripción:** Este endpoint se utiliza para actualizar un ticket existente mediante su ID.
+
+**Parámetros URL:**
+
+- `id`: ID del ticket que se desea actualizar.
+
+Datos del cuerpo (ejemplo):
+    ```json
+    
+    {
+        "usuario": string,
+        "estatus": string [abierto, cerrado]
+    }
+
+### 5. Eliminar un ticket
+
+**URL:** `/tickets/{id}`
+
+**Método HTTP:** DELETE
+
+**Descripción:** Este endpoint se utiliza para eliminar un ticket existente mediante su ID.
+
+**Parámetros URL:**
+
+- `id`: ID del ticket que se desea eliminar.
